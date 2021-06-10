@@ -1,0 +1,40 @@
+name: 'Terraform Activities'
+description: 'Provide SHELL-LIKE Terraform Services'
+inputs:
+  github_workspace:
+    description: The base url of the repository
+    required: yes
+  deployment_type:
+    description: The base url of the repository
+    required: yes
+  github_user:
+    description: The base url of the repository
+    required: yes
+  github_token:
+    description: The base url of the repository
+    required: yes
+  aws_profile:
+    description: The base url of the repository
+    required: yes
+  aws_region:
+    description: The base url of the repository
+    required: yes
+  aws_access_key:
+    description: The base url of the repository
+    required: yes
+  aws_secret_key:
+    description: The base url of the repository
+    required: yes
+  k8s_env:
+    description: The base url of the repository
+    required: yes
+  execute_command:
+    description: The base url of the repository
+    required: yes
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.who-to-greet }}
+

@@ -5,36 +5,36 @@ inputs:
     description: The base url of the repository
     required: yes
   deployment_type:
-    description: The base url of the repository
+    description: Valid values are 'apps' and 'environments'
     required: yes
   github_user:
-    description: The base url of the repository
+    description: The github user for xterrafile
     required: yes
   github_token:
-    description: The base url of the repository
+    description: The SSO envabled github token for the github_user
     required: yes
   aws_profile:
-    description: The base url of the repository
+    description: The name of the AWS Profile to use
     required: yes
   aws_region:
-    description: The base url of the repository
+    description: The region for the deployment
     required: yes
   aws_access_key:
-    description: The base url of the repository
+    description: The AWS Access key for the deployment
     required: yes
   aws_secret_key:
-    description: The base url of the repository
+    description: The AWS Secret Access key for the deploment
     required: yes
   k8s_env:
-    description: The base url of the repository
+    description: The deployment environment.  Valid values are 'dev', 'qa', 'stage-primary', 'stage-secondary', 'prod-primary', and 'prod-secondary'
     required: yes
   execute_command:
-    description: The base url of the repository
+    description: The command to execute 
     required: yes
 
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.who-to-greet }}
+    - ${{ inputs.github_workspace }}
 

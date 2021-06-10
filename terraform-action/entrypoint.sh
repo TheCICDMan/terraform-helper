@@ -1,13 +1,6 @@
 #!/bin/bash -xe
 env
 
-# Fresh Start
-echo "Cleaning up previous run"
-rm -rf "${GITHUB_WORKSPACE}"
-rm -rf "~/.aws"
-rm -rf "~/.git*"
-rm -rf "/github/home/.aws"
-
 git config --global credential.helper store
 echo "https://${CFS_K8S_GITHUB_USER}:${CFS_K8S_GITHUB_TOKEN}@github.com/vertexinc" > ~/.git-credentials
 git config --global --replace-all url.https://github.com/.insteadOf ssh://git@github.com/

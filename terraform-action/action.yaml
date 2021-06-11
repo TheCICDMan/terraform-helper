@@ -36,5 +36,13 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.github_workspace }}
-
+    - github_workspace
+    - deployment_type
+    - github_user
+    - github_token
+    - aws_profile
+    - aws_region
+    - aws_access_key
+    - aws_secret_key
+    - k8s_env
+    - execute_command

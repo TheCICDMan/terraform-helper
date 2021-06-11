@@ -1,5 +1,4 @@
 #!/bin/bash -xe
-export K8S_ENV=${INPUT_K8S_ENV}
 
 echo "============================================================="
 echo "=                                                           ="
@@ -11,16 +10,11 @@ echo "https://${INPUT_GITHUB_USER}:${INPUT_GITHUB_TOKEN}@github.com/vertexinc" >
 git config --global --replace-all url.https://github.com/.insteadOf ssh://git@github.com/
 git config --global --add url.https://github.com/.insteadOf git@github.com:
 
-echo "============================================================="
-echo "=                                                           ="
-echo "=           Create AWS Credentials File                     ="
-echo "=                                                           ="
-echo "============================================================="
-mkdir -p ~/.aws
-echo "[${INPUT_AWS_PROFILE}]" > ~/.aws/credentials
-echo "region: ${INPUT_AWS_REGION}" >> ~/.aws/credentials
-echo "aws_access_key_id=${INPUT_AWS_ACCESS_KEY}" >> ~/.aws/credentials
-echo "aws_secret_access_key=${INPUT_AWS_SECRET_KEY}" >> ~/.aws/credentials
+export K8S_ENV=${INPUT_K8S_ENV}
+export AWS_ACCESS_KEY_ID=${INPUT_AWS_ACCESS_KEY}
+export AWS_SECRET_ACCESS_KEY=${INPUT_AWS_SECRET_KEY}
+export AWS_DEFAULT_REGION=${INPUT_AWS_REGION}
+
 
 cd ${GITHUB_WORKSPACE}/${INPUT_DEPLOYMENT_TYPE}/${INPUT_K8S_ENV}
 

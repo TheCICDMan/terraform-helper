@@ -14,7 +14,7 @@ echo "aws_secret_access_key=$8" >> ~/.aws/credentials
 
 ls -ltr $1
 
-cd $1/$2/$9
+cd $GITHUB_WORKSPACE/$2/$9
 
 echo "============================================================="
 echo "=                                                           ="

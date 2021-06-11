@@ -2,19 +2,19 @@
 env
 
 git config --global credential.helper store
-echo "https://$3:$4@github.com/vertexinc" > ~/.git-credentials
+echo "https://${INPUT_GITHUB_USER}:${INPUT_GITHUB_TOKEN}@github.com/vertexinc" > ~/.git-credentials
 git config --global --replace-all url.https://github.com/.insteadOf ssh://git@github.com/
 git config --global --add url.https://github.com/.insteadOf git@github.com:
 
 mkdir -p ~/.aws
-echo "[$5]" > ~/.aws/credentials
-echo "region: $7" >> ~/.aws/credentials
-echo "aws_access_key_id=$7" >> ~/.aws/credentials
-echo "aws_secret_access_key=$8" >> ~/.aws/credentials
+echo "[${INPUT_AWS_PROFILE}]" > ~/.aws/credentials
+echo "region: ${INPUT_AWS_REGION}" >> ~/.aws/credentials
+echo "aws_access_key_id=${INPUT_AWS_ACCESS_KEY}" >> ~/.aws/credentials
+echo "aws_secret_access_key=${INPUT_AWS_SECRET_KEY}" >> ~/.aws/credentials
 
-ls -ltr $1
+ls -ltr ${GITHUB_WORKSPACE}
 
-cd $GITHUB_WORKSPACE/$2/$9
+cd ${GITHUB_WORKSPACE}/${INPUT_DEPLOYMENT_TYPE}/${INPUT_K8S_ENV}
 
 echo "============================================================="
 echo "=                                                           ="
@@ -42,12 +42,12 @@ echo "=                                                           ="
 echo "=           Update kubeconfig                               ="
 echo "=                                                           ="
 echo "============================================================="
-aws eks update-kubeconfig --name cfs-$1-eks --kubeconfig .terraform/cfs/output/eks_kubeconfig.yaml
+aws eks update-kubeconfig --name cfs-${INPUT_K8S_ENV}-eks --kubeconfig .terraform/cfs/output/eks_kubeconfig.yaml
 
 echo "============================================================="
 echo "=                                                           ="
 echo "=           Execute                                           ="
 echo "=                                                           ="
 echo "============================================================="
-eval "${10}"
+eval "${INPUT_EXECUTE_COMMAND}"
 

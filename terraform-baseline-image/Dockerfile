@@ -15,7 +15,7 @@ RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/instal
                     helm                        \
                     kube-linter                 \
                     kubeaudit                   \
-                    terraform@0.15.5            \
+                    terraform                   \
                     terraform-docs              \
                     terragrunt                  \
                     tflint                      \

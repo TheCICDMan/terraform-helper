@@ -26,7 +26,10 @@ inputs:
     description: The AWS Secret Access key for the deploment
     required: yes
   k8s_env:
-    description: The deployment environment.  Valid values are 'dev', 'qa', 'stage-primary', 'stage-secondary', 'prod-primary', and 'prod-secondary'
+    description: The deployment environment.  Valid values are 'dev', 'stage-primary', 'stage-secondary', 'prod-primary', and 'prod-secondary'
+    required: yes
+  deploy_env:
+    description: The environment to deploy.  Valid values are 'dit', 'qa' as well as values from k8s_env
     required: yes
   execute_command:
     description: The command to execute 

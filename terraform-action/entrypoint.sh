@@ -44,7 +44,7 @@ echo "=                                                           ="
 echo "=           Update kubeconfig                               ="
 echo "=                                                           ="
 echo "============================================================="
-aws eks update-kubeconfig --name cfs-${INPUT_K8S_ENV}-eks --kubeconfig .terraform/cfs/output/eks_kubeconfig.yaml
+aws eks update-kubeconfig --name cfs-${INPUT_DEPLOY_ENV}-eks --kubeconfig .terraform/cfs/output/eks_kubeconfig.yaml
 
 echo "============================================================="
 echo "=                                                           ="

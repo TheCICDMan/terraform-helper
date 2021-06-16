@@ -17,7 +17,7 @@ export AWS_DEFAULT_REGION=${INPUT_AWS_REGION}
 
 
 cd ${GITHUB_WORKSPACE}/${INPUT_DEPLOYMENT_TYPE}/${INPUT_DEPLOY_ENV}
-
+pwd
 echo "============================================================="
 echo "=                                                           ="
 echo "=           Running xterrafile                              ="

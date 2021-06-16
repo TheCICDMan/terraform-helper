@@ -16,7 +16,7 @@ export AWS_SECRET_ACCESS_KEY=${INPUT_AWS_SECRET_KEY}
 export AWS_DEFAULT_REGION=${INPUT_AWS_REGION}
 
 
-cd ${GITHUB_WORKSPACE}/${INPUT_DEPLOYMENT_TYPE}/${INPUT_K8S_ENV}
+cd ${GITHUB_WORKSPACE}/${INPUT_DEPLOYMENT_TYPE}/${INPUT_DEPLOY_ENV}
 
 echo "============================================================="
 echo "=                                                           ="

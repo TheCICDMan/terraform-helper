@@ -13,6 +13,8 @@ RUN /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/instal
     brew install    aws-iam-authenticator       \
                     eksctl                      \
                     helm                        \
+                    kubectl                     \
+                    kustomize                   \
                     kube-linter                 \
                     kubeaudit                   \
                     terraform                   \

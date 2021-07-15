@@ -29,6 +29,8 @@ RUN ln -s /home/linuxbrew/.linuxbrew/bin/brew /usr/local/bin/brew && \
     ln -s /home/linuxbrew/.linuxbrew/bin/helm /usr/local/bin/helm && \
     ln -s /home/linuxbrew/.linuxbrew/bin/kube-linter /usr/local/bin/kube-linter && \
     ln -s /home/linuxbrew/.linuxbrew/bin/kubeaudit /usr/local/bin/kubeaudit && \
+    ln -s /home/linuxbrew/.linuxbrew/bin/kubectl /usr/local/bin/kubectl && \
+    ln -s /home/linuxbrew/.linuxbrew/bin/kustomize /usr/local/bin/kustomize && \
     ln -s /home/linuxbrew/.linuxbrew/bin/terraform /usr/local/bin/terraform && \
     ln -s /home/linuxbrew/.linuxbrew/bin/terraform-docs /usr/local/bin/terraform-docs && \
     ln -s /home/linuxbrew/.linuxbrew/bin/terragrunt /usr/local/bin/terragrunt && \
